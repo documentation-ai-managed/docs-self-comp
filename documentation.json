@@ -60,44 +60,58 @@
         ]
       },
       {
-        "tab": "Help Center",
-        "icon": "help-circle",
+        "tab": "Интернет дача",
+        "icon": "wifi-icon",
         "pages": [
           {
-            "title": "Help Center",
+            "title": "Оглавление",
             "path": "help-center",
             "icon": "home"
           },
           {
-            "group": "FAQs",
-            "icon": "help-circle",
-            "expandable": false,
-            "pages": [
-              {
-                "title": "Getting Started FAQ",
-                "path": "help-center/faq/getting-started"
-              }
-            ]
+            "title": "Глоссарий",
+            "path": "glossary",
+            "icon": "book-a"
           },
           {
-            "group": "Troubleshooting",
-            "icon": "alert-circle",
-            "expandable": false,
-            "pages": [
-              {
-                "title": "Cannot Create Space",
-                "path": "help-center/troubleshooting/cannot-create-space"
-              }
-            ]
-          },
-          {
-            "group": "Guides",
+            "group": "Основной документ",
             "icon": "book-open",
             "expandable": false,
             "pages": [
               {
-                "title": "Add a Team Member",
-                "path": "help-center/guides/add-team-member"
+                "title": "Архитектурная схема и описание",
+                "path": "architect-scheme",
+                "icon": "lucide-file-code2"
+              },
+              {
+                "group": "Настройки устройств",
+                "pages": [
+                  {
+                    "title": "Роутер Tenda",
+                    "path": "tenda"
+                  },
+                  {
+                    "title": "Антенна NanoStation Loco M5 (родительский дом)",
+                    "path": "nanostation-loco-m5"
+                  }
+                ],
+                "icon": "settings-icon"
+              },
+              {
+                "title": "Устаревшие подходы",
+                "path": "old_realizations",
+                "icon": "delete"
+              }
+            ]
+          },
+          {
+            "group": "Частые проблемы",
+            "icon": "help-circle",
+            "expandable": false,
+            "pages": [
+              {
+                "title": "Типовые сценарии диагностики",
+                "path": "self-diagnosis"
               }
             ]
           }
