@@ -1,0 +1,160 @@
+---
+title: Exploring Self-comp Features
+description: Dive into the advanced capabilities of Self-comp for enhanced documentation management and team productivity.
+---
+
+## Overview
+
+Self-comp empowers you to manage documentation efficiently with powerful tools for search, export, customization, and analytics. You can quickly find content, share it across teams, brand your docs to match your identity, and gain insights into usage patterns. These features streamline workflows and boost productivity.
+
+<Columns cols={2}>
+  <Card title="Search & Filtering" icon="search" href="#search-and-filtering-tools">
+    Locate specific docs instantly with advanced filters.
+  </Card>
+  <Card title="Export & Sharing" icon="share-2" href="#export-and-sharing-options">
+    Export docs in multiple formats and share securely.
+  </Card>
+  <Card title="Customization" icon="palette" href="#customization-and-branding">
+    Tailor your documentation space with branding.
+  </Card>
+  <Card title="Analytics" icon="bar-chart-3" href="#analytics-and-usage-insights">
+    Track engagement and optimize content.
+  </Card>
+</Columns>
+
+## Search and Filtering Tools
+
+You access powerful search capabilities directly from the Self-comp dashboard. Combine keyword searches with filters for tags, authors, or dates to pinpoint exact documents.
+
+<Steps>
+  <Step title="Enter Query" icon="search">
+    Type your search term in the top bar.
+  </Step>
+  <Step title="Apply Filters" icon="filter">
+    Select filters like `date > 2024-01-01` or `tag:api`.
+  </Step>
+  <Step title="Refine Results" icon="zoom-in">
+    Use advanced operators such as `filetype:mdx` for precise matches.
+  </Step>
+</Steps>
+
+For programmatic access, integrate search via API:
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  const response = await fetch('https://api.example.com/v1/search', {
+    method: 'POST',
+    headers: { 'Authorization': 'Bearer YOUR_API_KEY' },
+    body: JSON.stringify({
+      query: 'authentication',
+      filters: { tags: ['security'], date: { gte: '2024-01-01' } }
+    })
+  });
+  const results = await response.json();
+  ```
+  ```python
+  import requests
+  response = requests.post('https://api.example.com/v1/search',
+    headers={'Authorization': 'Bearer YOUR_API_KEY'},
+    json={
+      'query': 'authentication',
+      'filters': {'tags': ['security'], 'date': {'gte': '2024-01-01'}}
+    }
+  )
+  results = response.json()
+  ```
+</CodeGroup>
+
+<Callout kind="tip">
+  Pro tip: Save frequent searches as bookmarks for one-click access.
+</Callout>
+
+## Export and Sharing Options
+
+Export your documentation in various formats or generate shareable links with permissions. You control access levels like view-only or edit.
+
+<Tabs>
+  <Tab title="PDF Export" icon="file-text">
+    Generate polished PDFs for offline sharing.
+
+    ```bash
+    curl -X POST https://api.example.com/v1/export/pdf \
+      -H "Authorization: Bearer YOUR_API_KEY" \
+      -d '{"doc_id": "doc-123", "include_toc": true}'
+    ```
+  </Tab>
+  <Tab title="Markdown" icon="code">
+    Export raw Markdown for GitHub or other tools.
+
+    ```bash
+    curl -X POST https://api.example.com/v1/export/md \
+      -H "Authorization: Bearer YOUR_API_KEY" \
+      -d '{"doc_id": "doc-123"}'
+    ```
+  </Tab>
+  <Tab title="Public Link" icon="link">
+    Create time-limited public links.
+
+    ```
+    Share URL: https://docs.example.com/share/doc-123?expires=2024-12-31
+    ```
+  </Tab>
+</Tabs>
+
+## Customization and Branding
+
+Match Self-comp's appearance to your brand using simple config options. Upload logos, set colors, and customize themes.
+
+Configure via dashboard or API:
+
+<ParamField path="brand.color" param-type="string" default-open="true">
+  Primary brand color (hex format, e.g., `#3B82F6`).
+</ParamField>
+
+<ParamField path="brand.logo" param-type="string">
+  URL to your logo image.
+</ParamField>
+
+<ParamField path="theme.font" param-type="string">
+  Custom font family.
+</ParamField>
+
+Example config update:
+
+```javascript
+await fetch('https://api.example.com/v1/config/brand', {
+  method: 'PATCH',
+  headers: { 'Authorization': 'Bearer YOUR_API_KEY' },
+  body: JSON.stringify({
+    color: '#3B82F6',
+    logo: 'https://your-site.com/logo.png'
+  })
+});
+```
+
+## Analytics and Usage Insights
+
+Monitor how teams interact with your docs. Track views, search queries, and popular pages to refine content.
+
+| Metric          | Description                          | Example Value |
+|-----------------|--------------------------------------|---------------|
+| Total Views     | Page views over time                 | `>10k` monthly |
+| Top Searches    | Most common queries                  | `api keys`    |
+| Bounce Rate     | Percentage leaving after one page    | `<30%`        |
+| Active Users    | Unique monthly users                 | `250+`        |
+
+<Expandable title="Advanced Analytics API" default-open="false">
+  Fetch detailed metrics:
+
+  ```javascript
+  const analytics = await fetch('https://api.example.com/v1/analytics', {
+    headers: { 'Authorization': 'Bearer YOUR_API_KEY' }
+  }).then(res => res.json());
+
+  console.log(analytics.views); // { total: 12500, trend: 'up' }
+  ```
+</Expandable>
+
+<Callout kind="info">
+  Enable analytics in settings to start tracking. Integrate with tools like Slack for alerts on low-engagement pages.
+</Callout>

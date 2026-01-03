@@ -1,0 +1,131 @@
+---
+title: Introduction to Self-comp
+description: Discover Self-comp, a comprehensive platform designed for organizing and managing project documentation efficiently.
+---
+
+## Overview
+
+Self-comp empowers you to create, organize, and maintain project documentation in one centralized space. You build structured knowledge bases with version control, search, and collaboration features tailored for teams. Streamline your workflows by turning scattered notes into professional docs accessible to everyone.
+
+<Callout kind="info">
+  Self-comp integrates seamlessly with your existing tools like GitHub and Slack for automated updates.
+</Callout>
+
+## Key Features
+
+Self-comp offers powerful tools to enhance your documentation process. Explore these core capabilities:
+
+<Columns cols={3}>
+  <Card title="Version Control" icon="git-branch" href="/configuration">
+    Track changes with Git-like versioning. Roll back edits and collaborate without conflicts.
+  </Card>
+  <Card title="Advanced Search" icon="search" href="/guides/search">
+    Find content instantly using full-text search, tags, and filters across all projects.
+  </Card>
+  <Card title="Team Collaboration" icon="users" href="/authentication">
+    Invite team members, set permissions, and review changes in real-time.
+  </Card>
+</Columns>
+
+## Who Should Use Self-comp
+
+Determine if Self-comp fits your needs based on your role:
+
+<Tabs>
+  <Tab title="Developers" icon="code">
+    You manage API docs, changelogs, and code references. Self-comp auto-generates docs from code comments and OpenAPI specs.
+  </Tab>
+  <Tab title="Product Managers" icon="trending-up">
+    You organize roadmaps, user guides, and release notes. Use templates for consistent formatting.
+  </Tab>
+  <Tab title="Engineering Leads" icon="settings">
+    You oversee team knowledge bases. Enforce standards with custom workflows and approvals.
+  </Tab>
+</Tabs>
+
+## Quick Start
+
+Get up and running in minutes:
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Create your account at https://dashboard.example.com/signup.
+  </Step>
+  <Step title="Create Project" icon="plus">
+    Start a new documentation space for your project.
+  </Step>
+  <Step title="Add Content" icon="edit-3">
+    Upload Markdown files or use the visual editor.
+  </Step>
+  <Step title="Publish" icon="globe">
+    Share your live docs with your team.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  // Fetch your docs via API
+  const response = await fetch('https://api.example.com/v1/docs/YOUR_PROJECT_ID', {
+    headers: { Authorization: `Bearer ${YOUR_API_KEY}` }
+  });
+  const docs = await response.json();
+  console.log(docs);
+  ```
+  ```python
+  # Fetch your docs via API
+  import requests
+  response = requests.get(
+      'https://api.example.com/v1/docs/YOUR_PROJECT_ID',
+      headers={'Authorization': f'Bearer {YOUR_API_KEY}'}
+  )
+  docs = response.json()
+  print(docs)
+  ```
+</CodeGroup>
+
+## Navigation Guide
+
+Use the sidebar to access sections quickly:
+
+- **Home**: Overview and recent updates
+- **Projects**: Manage your documentation spaces
+- **Search**: Global content search
+- **Settings**: Configure integrations and themes
+
+<Expandable title="Advanced Navigation Tips" default-open="false">
+
+  Customize your sidebar by pinning frequent projects. Use keyboard shortcuts like <kbd>Ctrl</kbd>+<kbd>K</kbd> for instant search.
+
+  ```mermaid
+  graph TD
+      A[Home] --> B[Projects]
+      A --> C[Search]
+      A --> D[Settings]
+      B --> E[Edit Docs]
+      C --> F[Results]
+  ```
+
+</Expandable>
+
+## Next Steps
+
+Dive deeper with these resources:
+
+<Columns cols={2}>
+  <Card title="Quickstart Guide" icon="rocket" href="/quickstart">
+    Set up your first project.
+  </Card>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your docs.
+  </Card>
+  <Card title="Configuration" icon="settings" href="/configuration">
+    Customize Self-comp.
+  </Card>
+  <Card title="Changelog" icon="git-commit" href="/changelog">
+    Stay updated.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Begin with the Quickstart Guide to publish your first doc today.
+</Callout>
