@@ -21,11 +21,6 @@
             "icon": "home"
           },
           {
-            "title": "Глоссарий",
-            "path": "glossary",
-            "icon": "book-a"
-          },
-          {
             "group": "Основной документ",
             "icon": "book-open",
             "expandable": false,
@@ -39,12 +34,16 @@
                 "group": "Настройки устройств",
                 "pages": [
                   {
-                    "title": "Роутер Tenda",
+                    "title": "Роутер Tenda AC15",
                     "path": "tenda"
                   },
                   {
                     "title": "Антенна NanoStation Loco M5 (родительский дом)",
                     "path": "nanostation-loco-m5"
+                  },
+                  {
+                    "title": "Роутер UniFi AC Long Range AP",
+                    "path": "unifi-ac-long-range-ap"
                   }
                 ],
                 "icon": "settings-icon"
