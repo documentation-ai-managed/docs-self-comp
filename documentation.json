@@ -1,6 +1,6 @@
 {
-  "name": "Self-comp",
-  "initialRoute": "introduction",
+  "name": "Dacha Internet",
+  "initialRoute": "help-center",
   "colors": {
     "light": {
       "brand": "#3B82F6"
@@ -69,5 +69,9 @@
         ]
       }
     ]
+  },
+  "seo": {
+    "robots:index": false,
+    "robots:follow": false
   }
 }
